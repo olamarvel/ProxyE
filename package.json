@@ -1,7 +1,7 @@
 {
-  "name": "electrate",
+  "name": "proxyetraxtor",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "easily extract and test proxy from a text",
   "main": "app/main.js",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -19,13 +19,14 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Olamarvel corp",
   "license": "CC0-1.0",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^10.4.14",
     "babel-jest": "^24.8.0",
     "electron": "~9.4.0",
     "electron-builder": "^20.39.0",
@@ -37,17 +38,24 @@
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.1",
     "jest": "^24.8.0",
-    "react-test-renderer": "^16.8.6"
+    "postcss": "^8.4.24",
+    "postcss-import": "^15.1.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "react-test-renderer": "^16.8.6",
+    "tailwindcss": "^3.3.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "electron-is-dev": "^1.1.0",
+    "gulp-postcss": "^9.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.3.4",
+    "socks": "^2.7.1"
   },
   "build": {
-    "appId": "com.karmadust.electrate",
+    "appId": "com.Olamarvel.ProxyExtract",
     "files": [
       "app/**/*",
       "node_modules/**/*",

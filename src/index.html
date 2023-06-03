@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="./index.css">
-    <title>Electrate</title>
-  </head>
-  <body>
-    <div id="app">
-    </div>
-    <script src="./index.js"></script>
-    <script src="http://localhost:35729/livereload.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- change to loac tailwind soon  -->
+  <!-- <link rel="stylesheet" type="text/css" href="./css/index.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark': '#030303',
+            'l-blue': '#E9F1FA',
+            'my-indigo': '#4f45e5',
+            'Text': '#cbd5e0'
+          },
+        },
+      },
+    };
+  </script>
+  <title>Electrate</title>
+</head>
+
+<body>
+  <div id="app" class="h-screen">
+  </div>
+  <script src="./index.js"></script>
+  <script src="http://localhost:35729/livereload.js"></script>
+</body>
+
 </html>
