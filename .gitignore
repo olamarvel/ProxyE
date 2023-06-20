@@ -4,7 +4,8 @@ node_modules/
 app/
 dist/
 icons/
-
+.env
+electron-builder.yml
 # MacOS Finder
 .DS_Store
 

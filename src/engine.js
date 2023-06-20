@@ -1,4 +1,7 @@
+import axios from 'axios/dist/browser/axios.cjs'
 import { ipcRenderer } from 'electron'
+import { toast } from 'react-toastify'
+import { SocksProxyAgent } from 'socks-proxy-agent'
 let pattern =
  /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s:]+(\d{2,5})\s+(United States|Germany|Canada|Italy|France|United Kingdom)/g
 
@@ -6,7 +9,7 @@ export async function copyToClipboard(text) {
  try {
   //   await navigator.permissions.request({ name: 'clipboard-write' })
   await navigator.clipboard.writeText(text)
-  console.log('Text copied to clipboard')
+  toast.success('Text copeid to clipboard')
  } catch (err) {
   console.error('Failed to copy text: ', err)
  }
@@ -26,16 +29,34 @@ export function extract(text) {
 }
 
 export function test(proxys) {
+ //  Promise.allSettled(proxys.map(value => SocksEngine(value))).then(result => {
+ //   //  event.reply('result', result)
+ //  })
+
  ipcRenderer.send(
-  'message',
-  JSON.stringify({
-   type: 'proxys',
-   proxys: proxys.map(proxy => {
+  'proxys',
+  JSON.stringify(
+   proxys.map(proxy => {
     const sockchange = proxy.split(':')
     const host = sockchange[1].slice(2)
     const port = sockchange[2]
     return { host, port }
-   }),
-  })
+   })
+  )
  )
+}
+
+export async function save(proxys) {
+ const response = await ipcRenderer.invoke('save', JSON.stringify(proxys))
+ if (response) toast.success('proxys saved successFully')
+ else toast.error('server error, Saving operation not completed')
+ return
+}
+
+export async function retrive() {
+ const response = await ipcRenderer.invoke('retrive')
+
+ if (response) toast.success('proxys retrive successFully')
+ else toast.error('server error, retriving operation not completed')
+ return response 
 }

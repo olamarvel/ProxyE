@@ -1,66 +1,73 @@
 {
-  "name": "proxyetraxtor",
-  "version": "1.0.0",
-  "description": "easily extract and test proxy from a text",
-  "main": "app/main.js",
-  "scripts": {
-    "postinstall": "install-app-deps",
-    "build": "gulp build",
-    "start": "gulp",
-    "test": "gulp test",
-    "release": "gulp release",
-    "make-icon": "gulp make-icon"
-  },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "Olamarvel corp",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "autoprefixer": "^10.4.14",
-    "babel-jest": "^24.8.0",
-    "electron": "~9.4.0",
-    "electron-builder": "^20.39.0",
-    "electron-icon-maker": "0.0.4",
-    "electron-react-devtools": "^0.5.3",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-livereload": "^4.0.1",
-    "jest": "^24.8.0",
-    "postcss": "^8.4.24",
-    "postcss-import": "^15.1.0",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.3.0",
-    "react-test-renderer": "^16.8.6",
-    "tailwindcss": "^3.3.2"
-  },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "electron-is-dev": "^1.1.0",
-    "gulp-postcss": "^9.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.3.4",
-    "socks": "^2.7.1"
-  },
-  "build": {
-    "appId": "com.Olamarvel.ProxyExtract",
-    "files": [
-      "app/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "publish": null
-  }
+ "name": "proxyetraxtor",
+ "version": "1.0.0",
+ "description": "easily extract and test proxy from a text",
+ "main": "app/main.js",
+ "scripts": {
+  "postinstall": "install-app-deps",
+  "build": "gulp build",
+  "start": "gulp",
+  "test": "gulp test",
+  "release": "gulp release",
+  "make-icon": "gulp make-icon",
+  "increment-version": "versiony package.json --patch && git add . && git commit -m 'new version' && git push"
+ },
+ "type": "commonjs",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/olamarvel/proxyEdist"
+ },
+ "keywords": [
+  "Electron",
+  "quick",
+  "start",
+  "tutorial",
+  "demo"
+ ],
+ "author": "Olamarvel corp",
+ "license": "CC0-1.0",
+ "devDependencies": {
+  "@babel/core": "^7.4.4",
+  "@babel/plugin-proposal-class-properties": "^7.5.5",
+  "@babel/preset-env": "^7.4.4",
+  "@babel/preset-react": "^7.0.0",
+  "autoprefixer": "^10.4.14",
+  "babel-jest": "^24.8.0",
+  "electron": "~9.4.0",
+  "electron-builder": "^23.6.0",
+  "electron-icon-maker": "0.0.4",
+  "electron-react-devtools": "^0.5.3",
+  "gulp": "^4.0.2",
+  "gulp-babel": "^8.0.0",
+  "gulp-clean-css": "^4.2.0",
+  "gulp-concat": "^2.6.1",
+  "gulp-livereload": "^4.0.1",
+  "jest": "^24.8.0",
+  "postcss": "^8.4.24",
+  "postcss-import": "^15.1.0",
+  "prettier": "^2.8.8",
+  "prettier-plugin-tailwindcss": "^0.3.0",
+  "react-test-renderer": "^16.8.6",
+  "tailwindcss": "^3.3.2",
+  "versiony": "^2.0.1"
+ },
+ "dependencies": {
+  "@reduxjs/toolkit": "^1.9.5",
+  "@sanity/client": "^6.1.3",
+  "axios": "^1.4.0",
+  "babel-polyfill": "^6.26.0",
+  "electron-is-dev": "^1.1.0",
+  "electron-updater": "^5.3.0",
+  "gulp-postcss": "^9.0.1",
+  "jsonfile": "^6.1.0",
+  "react": "^16.8.6",
+  "react-dom": "^16.8.6",
+  "react-redux": "^8.1.0",
+  "react-router-dom": "^5.3.4",
+  "react-toastify": "^9.1.3",
+  "socks": "^2.7.1",
+  "socks-proxy-agent": "^8.0.1",
+  "tailwind-scrollbar": "^3.0.4",
+  "update-electron-app": "^2.0.1"
+ }
 }
